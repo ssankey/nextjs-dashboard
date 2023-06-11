@@ -2,9 +2,15 @@
 "use client"
 
 import { signIn,signOut } from "next-auth/react"
-
+import { useState } from "react"
 
 export default function Example() {
+  const [email, setEmail] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!email) return false;
+    signIn('email',{email, redirect})
+  }
     return (
       <>
       <div className="flex flex-col sm:flex-row h-full">
@@ -13,7 +19,7 @@ export default function Example() {
           </div>
           <div className="bg-gray-300 lg:w-1/2 h-3/4  sm:h-full  flex flex-col justify-center sm:p-[5rem] items-center">
               <div className="mb-6 mt-5 sm:w-[450px] ">
-                <h2 className="text-[36px]  font-extrabold">Sign In</h2>
+                <h2 className="text-[36px]  font-extrabold">Sign In</h2>  
                 <p className="text-[16px] font-normal ">Sign in to your account</p>
               </div>
               <div className="flex sm:w-[450px]  flex-col sm:flex-row justify-between mb-4">
@@ -54,6 +60,7 @@ export default function Example() {
                     Email address
                     </label>
                     <input
+                      onChange={e => setEmail(e.target.value)}
                       className="w-full px-3 py-2 border bg-[#EAEAEA] border-gray-300 rounded-[10px]"
                       id="email"
                       type="email"
@@ -74,7 +81,7 @@ export default function Example() {
                   <div>
                     <a href="/" ><p className="mb-4 font-normal text-[16px] text-[#346BD4]">Forgot password?</p> </a>
                   </div>
-                  <button  className="w-full px-4 py-2 bg-black text-white rounded hover:bg-blue-600" onClick={() => signIn('google')}>
+                  <button onClick={handleSubmit} className="w-full px-4 py-2 bg-black text-white rounded hover:bg-blue-600" onClick={() => signIn('google')}>
                     Sign In
                   </button>
             </div>
