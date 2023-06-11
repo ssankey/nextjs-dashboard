@@ -2,8 +2,6 @@
 "use client"
 
 import { signIn,signOut } from "next-auth/react"
-import { useState } from "react"
-const [email, setEmail] = useState('')
 
 export default function Example() {
     return (
