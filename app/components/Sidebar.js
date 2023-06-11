@@ -62,15 +62,15 @@ export default function Sidebar() {
 
   return (
       <>
-          <div className=' sidebar- bg-black sm:rounded-[30px] 2xl:w-1/6 lg:w-3/12 sm:w-1/4 sm:h-[100vh] h-35'>
+          <div className=' sidebar- bg-black sm:rounded-[30px] 2xl:w-1/6 lg:w-3/12 sm:w-1/4 sm:h-[100vh] w-full h-35'>
               <button
-                    className="lg:hidden relative top-10 left-[340px]"
+                    className="lg:hidden relative top-[3.7rem]"
                     onClick={toggleSidebar}
                     aria-label="Toggle Sidebar"
                   >
                     <span className="sr-only">Toggle Sidebar</span>
                     <svg
-                      className="w-6 h-6 fill-current"
+                      className="w-9 h-9 fill-current"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -82,7 +82,7 @@ export default function Sidebar() {
                     </svg>
                   </button>
 
-              <div className=' ml-10 py-4 sm:ml-[30px] sm:mt-[30px]'>
+              <div className=' ml-[5rem] py-4 sm:ml-[30px] sm:mt-[30px]'>
                   <h2 className='text-white text-4xl font-black'>Board.</h2>
                   
               </div>
