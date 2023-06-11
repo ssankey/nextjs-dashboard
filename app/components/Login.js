@@ -3,14 +3,9 @@
 
 import { signIn,signOut } from "next-auth/react"
 import { useState } from "react"
+const [email, setEmail] = useState('')
 
 export default function Example() {
-  const [email, setEmail] = useState('')
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if(!email) return false;
-    signIn('email',{email, redirect})
-  }
     return (
       <>
       <div className="flex flex-col sm:flex-row h-full">
@@ -60,7 +55,7 @@ export default function Example() {
                     Email address
                     </label>
                     <input
-                      onChange={e => setEmail(e.target.value)}
+                      
                       className="w-full px-3 py-2 border bg-[#EAEAEA] border-gray-300 rounded-[10px]"
                       id="email"
                       type="email"
@@ -81,7 +76,7 @@ export default function Example() {
                   <div>
                     <a href="/" ><p className="mb-4 font-normal text-[16px] text-[#346BD4]">Forgot password?</p> </a>
                   </div>
-                  <button onClick={handleSubmit} className="w-full px-4 py-2 bg-black text-white rounded hover:bg-blue-600" onClick={() => signIn('google')}>
+                  <button  className="w-full px-4 py-2 bg-black text-white rounded hover:bg-blue-600" onClick={() => signIn('google')}>
                     Sign In
                   </button>
             </div>
