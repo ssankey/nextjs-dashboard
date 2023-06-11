@@ -62,7 +62,7 @@ export default function Sidebar() {
 
   return (
       <>
-          <div className=' sidebar- bg-black sm:rounded-[30px] 2xl:w-1/6 lg:w-3/12 sm:w-1/4 sm:h-[100vh] h-25'>
+          <div className=' sidebar- bg-black sm:rounded-[30px] 2xl:w-1/6 lg:w-3/12 sm:w-1/4 sm:h-[100vh] h-35'>
               <button
                     className="lg:hidden relative top-10 left-[400px]"
                     onClick={toggleSidebar}
