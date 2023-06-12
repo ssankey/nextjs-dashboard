@@ -261,7 +261,7 @@ return (
                 },
                 y: {
                   beginAtZero: true,
-                  max: 250,
+                  max: 100,
                   ticks: {
                     maxTicksLimit: 5,
                     stepSize: Math.ceil(250 / 5),
