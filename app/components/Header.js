@@ -237,7 +237,7 @@ return (
 
 
         {/* Charts */}
-      <div className='grid h-[360px] xl:w-[1100px] bg-white md:w-[600px] sm:w-[700px] lg:w-[800px] w-[400px] rounded-[20px] p-5 sm:p-[2rem] mt-[2rem] mx-auto'>
+      <div className='grid h-[360px] xl:w-[1100px] bg-white md:w-[600px] sm:w-[700px] lg:w-[800px] w-full rounded-[20px] p-5 sm:p-[2rem] mt-[2rem] mx-auto'>
         <div className='ml-5'> 
           <h3 className='text-lg font-[900] text-black'>Activities</h3>
           <p className='text-[14px] text-gray-600'>May - June 2021</p>
