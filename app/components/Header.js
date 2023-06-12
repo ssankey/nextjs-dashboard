@@ -286,7 +286,7 @@ return (
 
 
       <div className="grid mt-9  lg:w-[1150px] sm:w-[620px] sm:grid-cols-1 justify-items-center items-center sm:p-6 lg:grid-cols-2">
-            <div className=" mx-auto sm:w-[520px] p-2  mb-5 sm:mb-0 h-[256px] transition-shadow border rounded-[20px] shadow-sm bg-[#fff] hover:shadow-lg">
+            <div className="sm:w-[520px] sm:p-2  mb-5 sm:mb-0 h-[256px] transition-shadow border rounded-[20px] shadow-sm bg-[#fff] hover:shadow-lg">
                   <div className=' mx-auto sm:px-[3rem] mt-5 flex items-center justify-around sm:justify-between'>
                     <p className='text-[18px] font-bold'>Top products</p>
                     <p className='text-[12px]'>May - June 2021</p>
@@ -331,8 +331,8 @@ return (
             </div>
 
 
-              <div className="sm:w-[520px] h-[256px] p-2 transition-shadow border rounded-[20px] shadow-sm bg-white hover:shadow-lg">
-                  <div className='w-[400px] mx-auto mt-5 flex items-center justify-between px-10'>
+              <div className="sm:w-[520px] h-[256px] sm:p-2 transition-shadow border rounded-[20px] shadow-sm bg-white hover:shadow-lg">
+                  <div className='sm:w-[400px] mx-auto mt-5 flex items-center justify-between px-10'>
                     <p className='text-[18px] font-bold'>Today’s schedule</p>
                     <p className='text-[12px]'>See All </p>
                   </div>
