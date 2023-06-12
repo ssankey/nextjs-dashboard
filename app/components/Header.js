@@ -93,18 +93,12 @@ const [data, setchartData] = useState(
 useEffect(()=>{
   let prodPrice = [];
   let prodStock = [];
-  const limit = 10;
-  let counter = 0
   axios.get('https://www.balldontlie.io/api/v1/games')
       .then(res => {
         // console.log(res.data.data);
         for(const dataObj of res.data.data){
           prodPrice.push(parseInt(dataObj.home_team_score))
           prodStock.push(parseInt(dataObj.visitor_team_score))
-          counter++; 
-          if (counter === limit) {
-            break;
-          }
         }
       }).catch(err =>{
         console.log(err)
