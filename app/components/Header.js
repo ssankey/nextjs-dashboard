@@ -143,7 +143,7 @@ useEffect(()=>{
 return (
 
   <div className='mt-[2rem]- 2xl:w-5/6 lg:w-9/12 sm:w-3/4 w-full h-full sm:px-10'>
-     <div className="flex h-20 sm:flex-row flex-col mt-4 px-3 sm:w-full sm:pl-10 sm:mx-auto sm:justify-between sm:items-center">
+     <div className="flex h-20 sm:flex-row flex-col mt-4 px-5 sm:w-full sm:pl-10 sm:mx-auto sm:justify-between sm:items-center">
           <h3 className="text-[24px] font-black">Dashboard</h3>
           <div className="flex items-center justify-between w:[300px] sm:w-[390px]">
             <div className="relative">
