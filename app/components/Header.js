@@ -99,7 +99,7 @@ useEffect(()=>{
       .then(res => {
         // console.log(res.data.data);
         for(const dataObj of res.data.data){
-          prodPrice.push(parseInt(dataObj.home_team_score+10))
+          prodPrice.push(parseInt(dataObj.home_team_score))
           prodStock.push(parseInt(dataObj.visitor_team_score))
           counter++; 
           if (counter === limit) {
