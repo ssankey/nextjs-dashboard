@@ -240,6 +240,7 @@ return (
           <Line
             data={data}
             options={{
+              normalized: true,
               responsive:true,
               maintainAspectRatio: false,
               plugins: {
