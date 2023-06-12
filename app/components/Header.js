@@ -90,48 +90,97 @@ const [data, setchartData] = useState(
 ); 
 
 
-useEffect(()=>{
-  let prodPrice = [];
-  let prodStock = [];
-  axios.get('https://www.balldontlie.io/api/v1/games')
-      .then(res => {
-        // console.log(res.data.data);
-        for(const dataObj of res.data.data){
-          prodPrice.push(parseInt(dataObj.home_team_score))
-          prodStock.push(parseInt(dataObj.visitor_team_score))
-        }
-      }).catch(err =>{
-        console.log(err)
-      })
-      console.log('dataaa',prodPrice,prodStock)
+// useEffect(()=>{
+//   let prodPrice = [];
+//   let prodStock = [];
+//   axios.get('https://www.balldontlie.io/api/v1/games')
+//       .then(res => {
+//         // console.log(res.data.data);
+//         for(const dataObj of res.data.data){
+//           prodPrice.push(parseInt(dataObj.home_team_score))
+//           prodStock.push(parseInt(dataObj.visitor_team_score))
+//         }
+//       }).catch(err =>{
+//         console.log(err)
+//       })
+//       console.log('dataaa',prodPrice,prodStock)
 
 
 
 
-  setchartData({
-    labels: ["John", "Kevin", "Geroge", "Micheal", "Oreo"],
-    datasets: [
-      {
-        label: 'Dataset 1',
-        backgroundColor: '#E9A0A0',
-        borderColor: 'rgba(13, 202, 240, 1)',
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: prodPrice,
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Dataset 2',
-        backgroundColor:'#9BDD7C',
-        borderColor: 'rgba(25, 135, 84, 1)',
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: prodStock,
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      },
-    ],
-  });
-},[])
+//   setchartData({
+//     labels: ["John", "Kevin", "Geroge", "Micheal", "Oreo"],
+//     datasets: [
+//       {
+//         label: 'Dataset 1',
+//         backgroundColor: '#E9A0A0',
+//         borderColor: 'rgba(13, 202, 240, 1)',
+//         pointHoverBackgroundColor: '#fff',
+//         borderWidth: 2,
+//         data: prodPrice,
+//         backgroundColor: 'rgba(255, 99, 132, 0.5)',
+//       },
+//       {
+//         label: 'Dataset 2',
+//         backgroundColor:'#9BDD7C',
+//         borderColor: 'rgba(25, 135, 84, 1)',
+//         pointHoverBackgroundColor: '#fff',
+//         borderWidth: 2,
+//         data: prodStock,
+//         backgroundColor: 'rgba(53, 162, 235, 0.5)',
+//       },
+//     ],
+//   });
+// },[])
+
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get('https://www.balldontlie.io/api/v1/games');
+    const data = response.data.data;
+
+    let prodPrice = [];
+    let prodStock = [];
+
+    for (const dataObj of data) {
+      prodPrice.push(parseInt(dataObj.home_team_score));
+      prodStock.push(parseInt(dataObj.visitor_team_score));
+    }
+
+    console.log('dataaa', prodPrice, prodStock);
+
+    setchartData({
+      labels: ["John", "Kevin", "Geroge", "Micheal", "Oreo"],
+      datasets: [
+        {
+          label: 'Dataset 1',
+          backgroundColor: '#E9A0A0',
+          borderColor: 'rgba(13, 202, 240, 1)',
+          pointHoverBackgroundColor: '#fff',
+          borderWidth: 2,
+          data: prodPrice,
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        },
+        {
+          label: 'Dataset 2',
+          backgroundColor: '#9BDD7C',
+          borderColor: 'rgba(25, 135, 84, 1)',
+          pointHoverBackgroundColor: '#fff',
+          borderWidth: 2,
+          data: prodStock,
+          backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        },
+      ],
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+useEffect(() => {
+  fetchData();
+}, []);
+
 
 
 return (
