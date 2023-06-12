@@ -242,7 +242,7 @@ return (
           <h3 className='text-lg font-[900] text-black'>Activities</h3>
           <p className='text-[14px] text-gray-600'>May - June 2021</p>
         </div>
-        <div className='h-[180px]  xl:w-[1000px] md:w-[550px] lg:w-[700px] sm:w-[500px] w-[360px]'>
+        <div className='h-[180px]  xl:w-[1000px] md:w-[550px] lg:w-[700px] sm:w-[500px] w-full'>
           <Line
             data={data}
             options={{
